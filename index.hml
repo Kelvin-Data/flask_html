@@ -10,9 +10,11 @@
     <h1 id="display">Display some text</h1>
     
     <script>
-        fetch('/api')
-        .then(response => response.json())
-        .then(myJson => {
+        fetch('flask-cors.netlify.app/api')
+        .then(function(response) 
+           return response.json();
+         })
+          .then(function(myJson) {
             document.getElementById('display').innerText = myJson['data'];
         })
         .catch(error => {
